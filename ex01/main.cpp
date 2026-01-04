@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/04 04:57:40 by dasimoes          #+#    #+#             */
+/*   Updated: 2026/01/04 05:19:59 by dasimoes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PhoneBook.hpp"
+
+static	void	init_msg()
+{
+	std::cout << "Type one of the options below: " << std::endl;
+	std::cout << "ADD: save a new contact";
+	std::cout << "SEARCH: display a specific contact";
+	std::cout << "EXIT: ends the program" << std::endl;
+}
+
+int	main(int ac, char **av)
+{
+	PhoneBook phonebook;
+	std::string input;
+
+	(void)av;
+	if (ac != 1)
+	{
+		std::cout << "Phonebook error: no parameters supported" << std::endl;
+		return (1);
+	}
+	else
+	{
+		init_msg();
+		while (1)
+		{
+			std::cin >> input;
+			if (input == "ADD")
+				phonebook.add();
+			else if (input == "SEARCH")
+				phonebook.add();
+			else if (input == "EXIT")
+				break ;
+			else
+				std::cout << std::endl;
+		}
+	}
+	return (0);
+}
