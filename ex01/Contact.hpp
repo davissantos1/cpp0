@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 04:45:05 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/04 20:51:17 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/04 21:48:46 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CONTACT_HPP
 
 # include <string>
-# include <iostream>
 
 class	Contact
 {

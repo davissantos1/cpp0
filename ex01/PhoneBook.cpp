@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/04 21:21:29 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/04 23:52:43 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,15 @@ static std::string	grab_input()
 	return (input);
 }
 
+static void	print_contact_table()
+{
+
+}
+
 PhoneBook::PhoneBook()
 {
 	this->_index = 0;
+	this->_size = 0;
 }
 
 void	PhoneBook::add()
@@ -56,9 +62,18 @@ void	PhoneBook::add()
 		this->_index = 0;
 	else
 		this->_index++;
+	if (this->_size >= 0 && this->size <= 7)
+		this->_size++;
 }
 
 void	PhoneBook::search()
 {
-	std::cout << "I will search shit" << std::endl;
+	int	i;
+
+	i = 0;
+	while (i < this->_size)
+	{
+		if (this->_contacts[i]
+		i++;
+	}
 }

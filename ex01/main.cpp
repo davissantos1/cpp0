@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 04:57:40 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/04 21:22:21 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/04 21:40:49 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		init_msg();
 		while (1)
 		{
+			init_msg();
 			std::getline(std::cin, input);
 			if (input == "ADD")
 				phonebook.add();
