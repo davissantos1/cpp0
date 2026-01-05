@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 05:11:55 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/04 05:16:58 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/04 19:54:51 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class	PhoneBook
 {
 	private:
 		Contact _contacts[8];
+		int		_index;
 	public:
 		PhoneBook();
-		~PhoneBook();
-		
+
 		void	add();
 		void	search();
 };
