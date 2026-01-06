@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/05 21:25:54 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:40:02 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,19 @@ static void	print_row(Contact contact, int index)
 	std::string lastName = contact.getLastName();
 	std::string nickname = contact.getNickname();
 
-	std::cout << std::setw(10);
-	std::cout << index;
+	firstName = (firstName.size() > 10) ? firstName.substr(0,9) + "." : firstName;
+	lastName = (lastName.size() > 10) ? lastName.substr(0,9) + "." : lastName;
+	nickname = (nickname.size() > 10) ? nickname.substr(0,9) + "." : nickname;
+
 	std::cout << "|";
 	std::cout << std::setw(10);
-	std::cout << (firstName.size() > 10) ? firstName.substr(0,9) + "." : firstName;
-	std::cout << "|";
+	std::cout << index << "|";
 	std::cout << std::setw(10);
-	std::cout << (lastName.size() > 10) ? lastName.substr(0,9) + "." : lastName;
-	std::cout << "|";
+	std::cout << firstName << "|";
 	std::cout << std::setw(10);
-	std::cout << (nickname.size() > 10) ? nickname.substr(0,9) + "." : nickname;
-	std::cout << "|";
+	std::cout << lastName << "|";
+	std::cout << std::setw(10);
+	std::cout << nickname << "|";
 	std::cout << std::endl;
 }
 
@@ -78,7 +79,7 @@ void	PhoneBook::add()
 		this->_index = 0;
 	else
 		this->_index++;
-	if (this->_size >= 0 && this->size <= 7)
+	if (this->_size >= 0 && this->_size <= 7)
 		this->_size++;
 }
 
@@ -87,7 +88,10 @@ void	PhoneBook::search()
 	int	i;
 
 	i = -1;
+	std::cout << std::setfill('-') << std::setw(40);
 	while (++i < this->_size)
-		print_row(this->contacts[i], i);
+		print_row(this->_contacts[i], i);
+	std::cout << std::setfill('-') << std::setw(40);
+
 	
 }
