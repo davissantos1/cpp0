@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/06 17:52:35 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:34:20 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static std::string	grab_input()
 
 	while (1)
 	{
-		std::getline(std::cin, input);
+		if(!std::getline(std::cin, input))
+			break ;
 		if (input.empty())
 			std::cout << "Nothing typed, try again";
 		else
@@ -123,6 +124,8 @@ void	PhoneBook::search()
 		std::cout << "Input -1 to leave the search" << std::endl;
 		std::cout << std::endl;
 		std::cin >> option;
+		if (std::cin.eof())
+			break ;
 		if (option >= 0 && option <= 7)
 			show_contact(this->_contacts[option], option);
 		else if (option == -1)
