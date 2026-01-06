@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/06 15:39:44 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/06 17:52:35 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,18 @@ static void	print_row(Contact contact, int index)
 	std::cout << std::endl;
 }
 
+static void	show_contact(Contact contact, int index)
+{
+	std::cout << "------- Contact Information -------" << index << std::endl;
+	std::cout << "Index number: #" << index << std::endl;
+	std::cout << "First Name: " + contact.getFirstName() << std::endl;
+	std::cout << "Last Name: " + contact.getLastName() << std::endl;
+	std::cout << "Nickname: " + contact.getNickname() << std::endl;
+	std::cout << "Phone Number: " + contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " + contact.getDarkestSecret() << std::endl;
+	std::cout << "--------------------------- -------" << index << std::endl;
+}
+
 PhoneBook::PhoneBook()
 {
 	this->_index = 0;
@@ -61,6 +73,7 @@ PhoneBook::PhoneBook()
 void	PhoneBook::add()
 {
 	std::cout << "Type in the contact details: " << std::endl;
+	std::cout << std::endl;
 	std::cout << "First Name: ";
 	std::cout << std::endl;
 	this->_contacts[this->_index].setFirstName(grab_input());
@@ -87,6 +100,7 @@ void	PhoneBook::add()
 
 void	PhoneBook::search()
 {
+	int option;
 	int	i;
 
 	i = -1;
@@ -101,4 +115,19 @@ void	PhoneBook::search()
 		print_row(this->_contacts[i], i);
 	std::cout << "_____________________________________________";
 	std::cout << std::endl;
+	while (1)
+	{
+		std::cout << std::endl;
+		std::cout << "Search options: " << std::endl;
+		std::cout << "Input the contact's index (0 through 7)" << std::endl;
+		std::cout << "Input -1 to leave the search" << std::endl;
+		std::cout << std::endl;
+		std::cin >> option;
+		if (option >= 0 && option <= 7)
+			show_contact(this->_contacts[option], option);
+		else if (option == -1)
+			break ;
+		else
+			std::cout << "Wrong option, try again!" << std::endl;
+	}
 }
