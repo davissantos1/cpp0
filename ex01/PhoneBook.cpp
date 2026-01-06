@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/06 14:45:19 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:25:17 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,13 @@ void	PhoneBook::search()
 	{
 		std::cout << "There are no contacts inside the PhoneBook!";
 		std::cout << std::endl;
+		std::cout << std::endl;
 		return ;
 	}
 	std::cout << std::setfill('-') << std::setw(40);
+	std::cout << std::endl;
 	while (++i < this->_size)
 		print_row(this->_contacts[i], i);
 	std::cout << std::setfill('-') << std::setw(40);
+	std::cout << std::endl;
 }
