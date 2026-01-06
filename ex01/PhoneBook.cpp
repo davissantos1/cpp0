@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/04 23:52:43 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/05 21:25:54 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,25 @@ static std::string	grab_input()
 	return (input);
 }
 
-static void	print_contact_table()
+static void	print_row(Contact contact, int index)
 {
+	std::string firstName = contact.getFirstName();
+	std::string lastName = contact.getLastName();
+	std::string nickname = contact.getNickname();
 
+	std::cout << std::setw(10);
+	std::cout << index;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << (firstName.size() > 10) ? firstName.substr(0,9) + "." : firstName;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << (lastName.size() > 10) ? lastName.substr(0,9) + "." : lastName;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << (nickname.size() > 10) ? nickname.substr(0,9) + "." : nickname;
+	std::cout << "|";
+	std::cout << std::endl;
 }
 
 PhoneBook::PhoneBook()
@@ -70,10 +86,8 @@ void	PhoneBook::search()
 {
 	int	i;
 
-	i = 0;
-	while (i < this->_size)
-	{
-		if (this->_contacts[i]
-		i++;
-	}
+	i = -1;
+	while (++i < this->_size)
+		print_row(this->contacts[i], i);
+	
 }
