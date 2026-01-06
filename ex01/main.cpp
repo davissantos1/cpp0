@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 04:57:40 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/04 21:40:49 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:43:46 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int ac, char **av)
 			if (input == "ADD")
 				phonebook.add();
 			else if (input == "SEARCH")
-				phonebook.add();
+				phonebook.search();
 			else if (input == "EXIT")
 				break ;
 			else
