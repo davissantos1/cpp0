@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/06 15:25:17 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:39:44 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static void	print_row(Contact contact, int index)
 	lastName = (lastName.size() > 10) ? lastName.substr(0,9) + "." : lastName;
 	nickname = (nickname.size() > 10) ? nickname.substr(0,9) + "." : nickname;
 
+	std::cout << "_____________________________________________";
+	std::cout << std::endl;
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << index << "|";
@@ -95,10 +97,8 @@ void	PhoneBook::search()
 		std::cout << std::endl;
 		return ;
 	}
-	std::cout << std::setfill('-') << std::setw(40);
-	std::cout << std::endl;
 	while (++i < this->_size)
 		print_row(this->_contacts[i], i);
-	std::cout << std::setfill('-') << std::setw(40);
+	std::cout << "_____________________________________________";
 	std::cout << std::endl;
 }
