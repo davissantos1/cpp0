@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/06 19:34:20 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/07 18:50:20 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	show_contact(Contact contact, int index)
 	std::cout << "Nickname: " + contact.getNickname() << std::endl;
 	std::cout << "Phone Number: " + contact.getPhoneNumber() << std::endl;
 	std::cout << "Darkest Secret: " + contact.getDarkestSecret() << std::endl;
-	std::cout << "--------------------------- -------" << index << std::endl;
+	std::cout << "-----------------------------------" << index << std::endl;
 }
 
 PhoneBook::PhoneBook()
@@ -104,7 +104,6 @@ void	PhoneBook::search()
 	int option;
 	int	i;
 
-	i = -1;
 	if (this->_size == 0)
 	{
 		std::cout << "There are no contacts inside the PhoneBook!";
@@ -112,25 +111,31 @@ void	PhoneBook::search()
 		std::cout << std::endl;
 		return ;
 	}
-	while (++i < this->_size)
-		print_row(this->_contacts[i], i);
-	std::cout << "_____________________________________________";
-	std::cout << std::endl;
 	while (1)
 	{
+		i = -1;
+		while (++i < this->_size)
+			print_row(this->_contacts[i], i);
+		std::cout << "_____________________________________________";
+		std::cout << std::endl;
 		std::cout << std::endl;
 		std::cout << "Search options: " << std::endl;
 		std::cout << "Input the contact's index (0 through 7)" << std::endl;
 		std::cout << "Input -1 to leave the search" << std::endl;
 		std::cout << std::endl;
-		std::cin >> option;
-		if (std::cin.eof())
-			break ;
+		if (!(std::cin >> option))
+		{
+			if (std::cin.eof())
+				break ;
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Wrong input! Try again!" << std::endl;
+			continue ;
+		}
+		std::cout << std::endl;
 		if (option >= 0 && option <= 7)
 			show_contact(this->_contacts[option], option);
 		else if (option == -1)
 			break ;
-		else
-			std::cout << "Wrong option, try again!" << std::endl;
 	}
 }

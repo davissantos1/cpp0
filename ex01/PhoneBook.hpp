@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 05:11:55 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/04 21:57:42 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/07 18:18:39 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Contact.hpp"
 # include <iostream>
+# include <limits>
 # include <iomanip>
 
 class	PhoneBook
