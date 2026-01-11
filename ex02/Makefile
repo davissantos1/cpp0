@@ -1,10 +1,10 @@
 # Variables
 
 CC= c++
-CFLAGS= -Wall -Wextra -Werror
-SRC= main.cpp Contact.cpp PhoneBook.cpp
+CFLAGS= -Wall -Wextra -Werror -std=c++98
+SRC= tests.cpp Account.cpp
 OBJ= $(SRC:.cpp=.o)
-NAME= phonebook
+NAME= account
 
 # Makeflags
 MAKEFLAGS += --no-print-directory
