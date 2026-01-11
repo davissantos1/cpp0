@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:00:54 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/11 20:05:01 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/11 20:15:30 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "accounts:" << _nbAccounts << ";";
 	std::cout << "total:" << _totalAmount << ";";
 	std::cout << "deposits:" << _totalNbDeposits << ";";
-	std::cout << "withdrawals:" << _totalNbWithdrawals << ";";
+	std::cout << "withdrawals:" << _totalNbWithdrawals;
 	std::cout << std::endl;
 }
 
@@ -65,7 +65,7 @@ void	Account::makeDeposit( int deposit )
 	std::cout << "p_amount:" << p_amount << ";";
 	std::cout << "deposit:" << deposit << ";";
 	std::cout << "amount:" << this->_amount << ";";
-	std::cout << "nb_deposits:" << this->_nbDeposits << ";";
+	std::cout << "nb_deposits:" << this->_nbDeposits;
 	std::cout << std::endl;
 }
 
@@ -77,7 +77,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	std::cout << "p_amount:" << p_amount << ";";
 	if (this->_amount < withdrawal)
 	{
-		std::cout << "withdrawal:refused;";
+		std::cout << "withdrawal:refused";
 		std::cout << std::endl;
 		return (false);
 	}
@@ -88,7 +88,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 		_totalNbWithdrawals++;
 		std::cout << "withdrawal:" << withdrawal << ";";
 		std::cout << "amount:" << this->_amount << ";";
-		std::cout << "nb_withdrawals:" << this->_nbWithdrawals << ";";
+		std::cout << "nb_withdrawals:" << this->_nbWithdrawals;
 		std::cout << std::endl;
 		return (true);
 	}
@@ -100,7 +100,7 @@ void	Account::displayStatus( void ) const
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "deposits:" << this->_nbDeposits << ";";
-	std::cout << "withdrawals:" << this->_nbWithdrawals << ";";
+	std::cout << "withdrawals:" << this->_nbWithdrawals;
 	std::cout << std::endl;
 }
 
