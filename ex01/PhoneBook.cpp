@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@42sp.org.br>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:42:01 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/07 18:50:20 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/11 20:47:49 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,9 @@ void	PhoneBook::search()
 		if (option >= 0 && option <= 7)
 			show_contact(this->_contacts[option], option);
 		else if (option == -1)
+		{
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			break ;
+		}
 	}
 }
